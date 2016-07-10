@@ -6,14 +6,14 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "user")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
-    @NotNull
+    @Column(name = "username") @NotNull
     private String username;
 
-    @NotNull
+    @Column(name = "password") @NotNull
     private String password;
 
     public User() {
